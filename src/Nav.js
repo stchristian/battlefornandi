@@ -1,25 +1,25 @@
-import React from "react";
+import React from 'react'
 import { Link } from 'react-router-dom'
 
-export default function Nav() {
+export default function Nav () {
   return (
-    <div className="nav">
+    <div className='nav'>
       <nav>
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <Link to='/'>Home</Link>
           </li>
           <li>
-            <Link to="/popular">Popular</Link>
+            <Link to='/popular'>Popular</Link>
           </li>
           <li>
-            <Link to="/search">Search</Link>
+            <Link to='/search'>Search</Link>
           </li>
           <li>
-            <Link to="/Battle">Battle</Link>
+            <Link to='/Battle'>Battle</Link>
           </li>
         </ul>
       </nav>
     </div>
-  );
+  )
 }
