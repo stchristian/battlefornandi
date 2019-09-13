@@ -10,7 +10,7 @@ export default function Nav () {
             <Link to='/'>Home</Link>
           </li>
           <li>
-            <Link to='/popular'>Popular</Link>
+            <Link to='/popular/all'>Popular</Link>
           </li>
           <li>
             <Link to='/search'>Search</Link>

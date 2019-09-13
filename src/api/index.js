@@ -4,13 +4,13 @@ const baseURL = 'https://api.github.com'
 
 const http = axios.create({
   baseURL,
-  timeout: 1000,
+  timeout: 5000,
   headers: {
     Accept: 'application/vnd.github.v3+json'
   }
 })
 
-export async function getRepoByUser (username) {
+export async function getReposByUser (username) {
   const { data } = await http.get(`/users/${username}/repos`)
   return data
 }
@@ -28,8 +28,8 @@ export async function searchRepo (params) {
 }
 
 export async function getPopularRepos (programmingLanguage) {
-  return await searchRepo({
-    q: `q=stars:>1+language:${programmingLanguage || 'All'}`,
+  return searchRepo({
+    q: `stars:>1 language:${programmingLanguage || 'all'}`,
     sort: 'stars',
     order: 'desc'
   })

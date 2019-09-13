@@ -1,22 +1,25 @@
 import React from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 
-import Home from './Home'
+import HomePage from './HomePage'
 import Battle from './Battle'
-import Search from './Search'
-import Popular from './Popular'
+import SearchPage from './SearchPage'
+import PopularPage from './PopularPage'
 import Nav from './Nav'
 
 function AppRouter () {
   return (
     <Router>
       <div>
-        <Nav />
-
-        <Route path='/' exact component={Home} />
-        <Route path='/popular' component={Popular} />
-        <Route path='/search' component={Search} />
-        <Route path='/battle' component={Battle} />
+        <header>
+          <Nav />
+        </header>
+        <main>
+          <Route path='/' exact component={HomePage} />
+          <Route path='/popular/:lang' component={PopularPage} />
+          <Route path='/search' component={SearchPage} />
+          <Route path='/battle' component={Battle} />
+        </main>
       </div>
     </Router>
   )
